@@ -2,7 +2,8 @@
 Consider these hypothesis testing questions:
 $$H_{0j} vs H_{1j}, j=1,2...,n$$.
 We want to test these an the same time, then we will receive these four results:
-Table 1:多重假设检验中的四种潜在结果
+
+Table 1:Four potential outcomes in multiple hypothesis testing
 
 <table>
 	<tbody>
@@ -42,7 +43,24 @@ From this table, we could find out there are two types of error in multiple test
 + R = # {Total rejection}
 Therefore question is that --- How to control typr-I error?
 
-## Familywise Error Rate(FWER)
+
+
+# Familywise Error Rate(FWER)
 The traditional method to control gobal hypothesis test hope to strictlt control familywise error rate
 $$FEWR = P(U\geq 1) \leq \alpha,$$
 which means the probability of controlling for the rejection of at least one of the true original hypotheses does not exceed a given significance level $\alpha$.
+
+
+
+## Benforonni correction
+
+Step 1: For each hypothesis $\{\mathcal{H}_0j\}_{j=1}^p$, construct the test statistic $\{T_j\}_j=1^p$, compute the p-value $\{p_j\}_j=1^p$
+Step 2: For $j=1,\cdots,p$, reject the corresponding original hypothesis $h_{0j}$, if $p_j\leq \frac{\alpha}{p}$. 
+
+Define $S_{0}={j:H_{0j}}$ is true , and the Benforonni correction method satisfies
+
+$$\text{FWER}=\mathbb{P}\left(\bigcup_{j\in S_0}\{p_j\leq\alpha/p\}\right)\leq\sum_{j\in S_0}\mathbb{P}(p_j\leq\alpha/p) = p_0\frac{\ alpha}{p}<\alpha.$$
+
+Two flaws in the FWER criterion: 
++ Theorem 1 states that the Benforonni correction will actually control the FEWR below the level of $(p_0/p)\alpha$. The Benforonni correction is conservative when the difference between $p_0$ and $p$ is large;
++ When the scale of multiple tests $p$ is large or even divergent, the rejection threshold $\alpha/p$ of Benforonni correction degenerates and tends to cause the FWER criterion to be too strict and not to reject any hypothesis .
