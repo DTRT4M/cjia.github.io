@@ -10,14 +10,104 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="In Bayesian statistics
-[#e-value _ #bayes factor _ 2403.09350v2.pdf](https://github.com/user-attachments/files/17055651/e-value._.bayes.factor._.2403.09350v2.pdf)
+<meta name="description" content="# False discovery
+Consider these hypothesis testing questions:
+$$H_{0j} vs H_{1j}, j=1,2...,n$$.
+We want to test these an the same time, then we will receive these four results:
+Table 1:多重假设检验中的四种潜在结果
 
+<table>
+	<tbody>
+		<tr>
+			<th> </th>
+			<th>Fail to reject $H_{0}$</th>
+			<th>Reject $H_{0}$</th>
+			<th>Overall</th>
+		</tr>
+		<tr>
+			<td>$H_{0}$is true</td>
+			<td>$V$</td>
+			<td>$U$</td>
+			<td>$p_0$</td>
+		</tr>
+		<tr>
+			<td>$\mathrm{H}_{0}$is false</td>
+			<td>$S$</td>
+			<td>$T$</td>
+			<td>$P1$</td>
+		</tr>
+		<tr>
+			<td>Overall</td>
+			<td>$p-R$</td>
+			<td>$R$</td>
+			<td>$\mathcal{D}=\mathcal{D}_{0}+\mathcal{L}$</td>
+		</tr>
+	</tbody>
+</table>
+
+From this table, we could find out there are two types of error in multiple testing:
++ $p_0$ = # {Null}
++ $p_1$ = # {Alternative}
++ U = # {Fales discovery/ False postive} $\longleftarrow$ type-I error
++ S = # {False negative} $\longleftarrow$  type-II error
++ T = # {True positive}
++ R = # {Total rejection}
+Therefore question is that --- How to control typr-I error?
+
+## Familywise Error Rate(FWER)
+The traditional method to control gobal hypothesis test hope to strictlt control familywise error rate
+$$FEWR = P(U\geq 1) \leq \alpha,$$
+which means the probability of controlling for the rejection of at least one of the true original hypotheses does not exceed a given significance level $\alpha$.
 。">
 <meta property="og:title" content="The differeces between e-value and bayes factor">
-<meta property="og:description" content="In Bayesian statistics
-[#e-value _ #bayes factor _ 2403.09350v2.pdf](https://github.com/user-attachments/files/17055651/e-value._.bayes.factor._.2403.09350v2.pdf)
+<meta property="og:description" content="# False discovery
+Consider these hypothesis testing questions:
+$$H_{0j} vs H_{1j}, j=1,2...,n$$.
+We want to test these an the same time, then we will receive these four results:
+Table 1:多重假设检验中的四种潜在结果
 
+<table>
+	<tbody>
+		<tr>
+			<th> </th>
+			<th>Fail to reject $H_{0}$</th>
+			<th>Reject $H_{0}$</th>
+			<th>Overall</th>
+		</tr>
+		<tr>
+			<td>$H_{0}$is true</td>
+			<td>$V$</td>
+			<td>$U$</td>
+			<td>$p_0$</td>
+		</tr>
+		<tr>
+			<td>$\mathrm{H}_{0}$is false</td>
+			<td>$S$</td>
+			<td>$T$</td>
+			<td>$P1$</td>
+		</tr>
+		<tr>
+			<td>Overall</td>
+			<td>$p-R$</td>
+			<td>$R$</td>
+			<td>$\mathcal{D}=\mathcal{D}_{0}+\mathcal{L}$</td>
+		</tr>
+	</tbody>
+</table>
+
+From this table, we could find out there are two types of error in multiple testing:
++ $p_0$ = # {Null}
++ $p_1$ = # {Alternative}
++ U = # {Fales discovery/ False postive} $\longleftarrow$ type-I error
++ S = # {False negative} $\longleftarrow$  type-II error
++ T = # {True positive}
++ R = # {Total rejection}
+Therefore question is that --- How to control typr-I error?
+
+## Familywise Error Rate(FWER)
+The traditional method to control gobal hypothesis test hope to strictlt control familywise error rate
+$$FEWR = P(U\geq 1) \leq \alpha,$$
+which means the probability of controlling for the rejection of at least one of the true original hypotheses does not exceed a given significance level $\alpha$.
 。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://DTRT4M.github.io/cjia.github.io/post/The%20differeces%20between%20e-value%20and%20bayes%20factor.html">
@@ -79,8 +169,57 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>In Bayesian statistics<br>
-<a href="https://github.com/user-attachments/files/17055651/e-value._.bayes.factor._.2403.09350v2.pdf">#e-value _ #bayes factor _ 2403.09350v2.pdf</a></p></div>
+<div class="markdown-body" id="postBody"><h1>False discovery</h1>
+<p>Consider these hypothesis testing questions:<br>
+$$H_{0j} vs H_{1j}, j=1,2...,n$$.<br>
+We want to test these an the same time, then we will receive these four results:<br>
+Table 1:多重假设检验中的四种潜在结果</p>
+<markdown-accessiblity-table><table role="table">
+	<tbody>
+		<tr>
+			<th> </th>
+			<th>Fail to reject $H_{0}$
+</th>
+			<th>Reject $H_{0}$
+</th>
+			<th>Overall</th>
+		</tr>
+		<tr>
+			<td>$H_{0}$is true</td>
+			<td>$V$</td>
+			<td>$U$</td>
+			<td>$p_0$</td>
+		</tr>
+		<tr>
+			<td>$\mathrm{H}_{0}$is false</td>
+			<td>$S$</td>
+			<td>$T$</td>
+			<td>$P1$</td>
+		</tr>
+		<tr>
+			<td>Overall</td>
+			<td>$p-R$</td>
+			<td>$R$</td>
+			<td>$\mathcal{D}=\mathcal{D}_{0}+\mathcal{L}$</td>
+		</tr>
+	</tbody>
+</table></markdown-accessiblity-table>
+<p>From this table, we could find out there are two types of error in multiple testing:</p>
+<ul>
+<li>
+$p_0$ = # {Null}</li>
+<li>
+$p_1$ = # {Alternative}</li>
+<li>U = # {Fales discovery/ False postive} $\longleftarrow$ type-I error</li>
+<li>S = # {False negative} $\longleftarrow$  type-II error</li>
+<li>T = # {True positive}</li>
+<li>R = # {Total rejection}<br>
+Therefore question is that --- How to control typr-I error?</li>
+</ul>
+<h2>Familywise Error Rate(FWER)</h2>
+<p>The traditional method to control gobal hypothesis test hope to strictlt control familywise error rate<br>
+$$FEWR = P(U\geq 1) \leq \alpha,$$<br>
+which means the probability of controlling for the rejection of at least one of the true original hypotheses does not exceed a given significance level $\alpha$.</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
@@ -181,6 +320,6 @@ function iFrameLoading(){
 
 
 </script>
-
+<script>MathJax = {tex: {inlineMath: [["$", "$"]]}};</script><script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </html>
