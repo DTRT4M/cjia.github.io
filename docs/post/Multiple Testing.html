@@ -78,7 +78,30 @@ Two flaws in the FWER criterion:
 + Theorem 1 states that the Benforonni correction will actually control the FEWR below the level of $p_0 \frac{\alpha}{p}$. The Benforonni correction is conservative when the difference between $p_0$ and $p$ is large;
 + When the scale of multiple tests $p$ is large or even divergent, the rejection threshold $\alpha/p$ of Benforonni correction degenerates and tends to cause the FWER criterion to be too strict and not to reject any hypothesis .
 
-Therefore, we need a new method to improve this situation.。">
+Therefore, we need a new method to improve this situation.
+
+# False Discovery Rate
+Benjamini and Hochberg(1995) suggest that set False Discovery Rate(FDR) as standard of type-I error control, rather than FWER.
+
+## Def (FDR):
+
+$$FDR \equiv E(FDP) = E\left[\frac{U}{R \vee 1}\right] ,$$
+where U is Fales discovery/ False postive, T is true positive, and R is total rejections.
+
+Now we consider how to control FDR.
+
+# Benjamini-Hochberg Method
+For a given FDR control level $\( q \in (0,1) \)$, the BH method's algorithm is as follows:
+
+**Step 1:** For the $\( p \)$-dimensional hypotheses $\( \{H_{0j}\}_{j=1}^p \)$, construct the test statistics $\( \{T_j\}_{j=1}^p \) $and calculate the corresponding p-values $\( \{p_j\}_{j=1}^p \)$.
+
+**Step 2:** Sort the obtained p-values in ascending order to get: $\( p_{(1)} \leq \cdots \leq p_{(p)} \)$.
+
+**Step 3:** Select a data-adaptive threshold value
+
+$$k^* = \max_{1 \leq k \leq p} \{ k : p_{(k)}{ \leq \frac{q}{p} k}};$$
+
+**Step 4:** For $\( j = 1, \cdots, p \), if \( p_j \leq p(k^*) \)$, reject the corresponding null hypothesis $\( H_{0j} \)$.。">
 <meta property="og:title" content="Multiple Testing">
 <meta property="og:description" content="# False discovery
 Consider these hypothesis testing questions:
@@ -148,7 +171,30 @@ Two flaws in the FWER criterion:
 + Theorem 1 states that the Benforonni correction will actually control the FEWR below the level of $p_0 \frac{\alpha}{p}$. The Benforonni correction is conservative when the difference between $p_0$ and $p$ is large;
 + When the scale of multiple tests $p$ is large or even divergent, the rejection threshold $\alpha/p$ of Benforonni correction degenerates and tends to cause the FWER criterion to be too strict and not to reject any hypothesis .
 
-Therefore, we need a new method to improve this situation.。">
+Therefore, we need a new method to improve this situation.
+
+# False Discovery Rate
+Benjamini and Hochberg(1995) suggest that set False Discovery Rate(FDR) as standard of type-I error control, rather than FWER.
+
+## Def (FDR):
+
+$$FDR \equiv E(FDP) = E\left[\frac{U}{R \vee 1}\right] ,$$
+where U is Fales discovery/ False postive, T is true positive, and R is total rejections.
+
+Now we consider how to control FDR.
+
+# Benjamini-Hochberg Method
+For a given FDR control level $\( q \in (0,1) \)$, the BH method's algorithm is as follows:
+
+**Step 1:** For the $\( p \)$-dimensional hypotheses $\( \{H_{0j}\}_{j=1}^p \)$, construct the test statistics $\( \{T_j\}_{j=1}^p \) $and calculate the corresponding p-values $\( \{p_j\}_{j=1}^p \)$.
+
+**Step 2:** Sort the obtained p-values in ascending order to get: $\( p_{(1)} \leq \cdots \leq p_{(p)} \)$.
+
+**Step 3:** Select a data-adaptive threshold value
+
+$$k^* = \max_{1 \leq k \leq p} \{ k : p_{(k)}{ \leq \frac{q}{p} k}};$$
+
+**Step 4:** For $\( j = 1, \cdots, p \), if \( p_j \leq p(k^*) \)$, reject the corresponding null hypothesis $\( H_{0j} \)$.。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://DTRT4M.github.io/cjia.github.io/post/Multiple%20Testing.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
@@ -272,7 +318,20 @@ which means the probability of controlling for the rejection of at least one of 
 <li>Theorem 1 states that the Benforonni correction will actually control the FEWR below the level of $p_0 \frac{\alpha}{p}$. The Benforonni correction is conservative when the difference between $p_0$ and $p$ is large;</li>
 <li>When the scale of multiple tests $p$ is large or even divergent, the rejection threshold $\alpha/p$ of Benforonni correction degenerates and tends to cause the FWER criterion to be too strict and not to reject any hypothesis .</li>
 </ul>
-<p>Therefore, we need a new method to improve this situation.</p></div>
+<p>Therefore, we need a new method to improve this situation.</p>
+<h1>False Discovery Rate</h1>
+<p>Benjamini and Hochberg(1995) suggest that set False Discovery Rate(FDR) as standard of type-I error control, rather than FWER.</p>
+<h2>Def (FDR):</h2>
+<p>$$FDR \equiv E(FDP) = E\left[\frac{U}{R \vee 1}\right] ,$$<br>
+where U is Fales discovery/ False postive, T is true positive, and R is total rejections.</p>
+<p>Now we consider how to control FDR.</p>
+<h1>Benjamini-Hochberg Method</h1>
+<p>For a given FDR control level $( q \in (0,1) )$, the BH method's algorithm is as follows:</p>
+<p><strong>Step 1:</strong> For the $( p )$-dimensional hypotheses $( {H_{0j}}<em>{j=1}^p )$, construct the test statistics $( {T_j}</em>{j=1}^p ) $and calculate the corresponding p-values $( {p_j}_{j=1}^p )$.</p>
+<p><strong>Step 2:</strong> Sort the obtained p-values in ascending order to get: $( p_{(1)} \leq \cdots \leq p_{(p)} )$.</p>
+<p><strong>Step 3:</strong> Select a data-adaptive threshold value</p>
+<p>$$k^* = \max_{1 \leq k \leq p} { k : p_{(k)}{ \leq \frac{q}{p} k}};$$</p>
+<p><strong>Step 4:</strong> For $( j = 1, \cdots, p ), if ( p_j \leq p(k^*) )$, reject the corresponding null hypothesis $( H_{0j} )$.</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>

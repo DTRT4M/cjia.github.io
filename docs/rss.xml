@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Chenxu JIA's Blog（贾晨旭的博客）</title><link>https://DTRT4M.github.io/cjia.github.io</link><description>Statistic, Economic, and Finance</description><copyright>Chenxu JIA's Blog（贾晨旭的博客）</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://DTRT4M.github.io/cjia.github.io</link></image><lastBuildDate>Fri, 08 Nov 2024 08:45:19 +0000</lastBuildDate><managingEditor>Chenxu JIA's Blog（贾晨旭的博客）</managingEditor><ttl>60</ttl><webMaster>Chenxu JIA's Blog（贾晨旭的博客）</webMaster><item><title>Bayesian Multiple Testing</title><link>https://DTRT4M.github.io/cjia.github.io/post/Bayesian%20Multiple%20Testing.html</link><description># The prior and posterior distributions&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Chenxu JIA's Blog（贾晨旭的博客）</title><link>https://DTRT4M.github.io/cjia.github.io</link><description>Statistic, Economic, and Finance</description><copyright>Chenxu JIA's Blog（贾晨旭的博客）</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://DTRT4M.github.io/cjia.github.io</link></image><lastBuildDate>Sat, 09 Nov 2024 02:30:43 +0000</lastBuildDate><managingEditor>Chenxu JIA's Blog（贾晨旭的博客）</managingEditor><ttl>60</ttl><webMaster>Chenxu JIA's Blog（贾晨旭的博客）</webMaster><item><title>Bayesian Multiple Testing</title><link>https://DTRT4M.github.io/cjia.github.io/post/Bayesian%20Multiple%20Testing.html</link><description># The prior and posterior distributions&#13;
 In the absence of strong prior information about $V$ and $\sigma^2$, we suggest use of&#13;
 &#13;
 $$\pi(V,\sigma^2)=(V+\sigma^2)^{-2}.$$&#13;
@@ -94,4 +94,27 @@ Two flaws in the FWER criterion: &#13;
 + Theorem 1 states that the Benforonni correction will actually control the FEWR below the level of $p_0 \frac{\alpha}{p}$. The Benforonni correction is conservative when the difference between $p_0$ and $p$ is large;&#13;
 + When the scale of multiple tests $p$ is large or even divergent, the rejection threshold $\alpha/p$ of Benforonni correction degenerates and tends to cause the FWER criterion to be too strict and not to reject any hypothesis .&#13;
 &#13;
-Therefore, we need a new method to improve this situation.。</description><guid isPermaLink="true">https://DTRT4M.github.io/cjia.github.io/post/Multiple%20Testing.html</guid><pubDate>Thu, 19 Sep 2024 07:51:07 +0000</pubDate></item></channel></rss>
+Therefore, we need a new method to improve this situation.&#13;
+&#13;
+# False Discovery Rate&#13;
+Benjamini and Hochberg(1995) suggest that set False Discovery Rate(FDR) as standard of type-I error control, rather than FWER.&#13;
+&#13;
+## Def (FDR):&#13;
+&#13;
+$$FDR \equiv E(FDP) = E\left[\frac{U}{R \vee 1}\right] ,$$&#13;
+where U is Fales discovery/ False postive, T is true positive, and R is total rejections.&#13;
+&#13;
+Now we consider how to control FDR.&#13;
+&#13;
+# Benjamini-Hochberg Method&#13;
+For a given FDR control level $\( q \in (0,1) \)$, the BH method's algorithm is as follows:&#13;
+&#13;
+**Step 1:** For the $\( p \)$-dimensional hypotheses $\( \{H_{0j}\}_{j=1}^p \)$, construct the test statistics $\( \{T_j\}_{j=1}^p \) $and calculate the corresponding p-values $\( \{p_j\}_{j=1}^p \)$.&#13;
+&#13;
+**Step 2:** Sort the obtained p-values in ascending order to get: $\( p_{(1)} \leq \cdots \leq p_{(p)} \)$.&#13;
+&#13;
+**Step 3:** Select a data-adaptive threshold value&#13;
+&#13;
+$$k^* = \max_{1 \leq k \leq p} \{ k : p_{(k)}{ \leq \frac{q}{p} k}};$$&#13;
+&#13;
+**Step 4:** For $\( j = 1, \cdots, p \), if \( p_j \leq p(k^*) \)$, reject the corresponding null hypothesis $\( H_{0j} \)$.。</description><guid isPermaLink="true">https://DTRT4M.github.io/cjia.github.io/post/Multiple%20Testing.html</guid><pubDate>Thu, 19 Sep 2024 07:51:07 +0000</pubDate></item></channel></rss>
