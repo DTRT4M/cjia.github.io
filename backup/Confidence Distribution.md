@@ -19,8 +19,12 @@
 
 (iii) the mode $\widehat{\theta}_n=\arg\max_{\theta\in\Theta}h_n(\theta)$, where $h_n(\theta)=dH_n(\theta)/d\theta$ is the confidence density function. Under some moderate conditions, these three point estimators are consistent.
 
-To further understand these three types of estimators, the median $\widetilde{\theta}_{n}$ is an unbiased estimator with $\Pr_{\theta_0}(\widetilde{\theta}_n\leq\theta_0)=\Pr_{\theta_0}(1/2\leq H_n(\theta_0))=1/2;$ The mean $\bar{\theta}_n$ can be viewed as a frequentist analog of Bayesian estimator under the squared loss function; The mode $\widehat{\theta}_n$ matches with the maximum likelihood estimator if the confidence densitv is from a normalized likelihood function (Xie and Singh, 2013)
+To further understand these three types of estimators, the median $\widetilde{\theta}_{n}$ is an unbiased estimator with 
 
-Confidence interval As discussed in Section $\boxed2.1$, in a confidence curve, a line across the $y$-axis of the significance level $\alpha$ intersects with the confidence curve at two points, and these two points correspond to an $1-\alpha$ level, equal tailed, two-sided confidence interval for $\theta$, i.e., $(H_n^{-1}(\alpha/2),H_n^{-1}(1-\alpha/2)).$ Furthermore, $(-\infty,H_n^{-1}(1-\alpha)]$ and $[H_n^{-1}(\alpha),\infty)$ are one-sided $1-\alpha$ level confidence intervals for the parameter $\theta.$
+$Pr_{\theta_0}(\widetilde{\theta}_{n} \leq \theta_0) = Pr_{\theta_0}(1/2 \leq H_n(\theta_0))=1/2$
+
+The mean $\bar{\theta}_n$ can be viewed as a frequentist analog of Bayesian estimator under the squared loss function; The mode $\widehat{\theta}_n$ matches with the maximum likelihood estimator if the confidence densitv is from a normalized likelihood function (Xie and Singh, 2013)
+
+**Confidence interval** As discussed in Section $\boxed2.1$, in a confidence curve, a line across the $y$-axis of the significance level $\alpha$ intersects with the confidence curve at two points, and these two points correspond to an $1-\alpha$ level, equal tailed, two-sided confidence interval for $\theta$, i.e., $(H_n^{-1}(\alpha/2),H_n^{-1}(1-\alpha/2)).$ Furthermore, $(-\infty,H_n^{-1}(1-\alpha)]$ and $[H_n^{-1}(\alpha),\infty)$ are one-sided $1-\alpha$ level confidence intervals for the parameter $\theta.$
 
 **Hypothesis testing** From a CD, one can obtain p-values for various hypothesis testing problems The natural thinking is to measure the support that $H_n(\cdot)$ lends to a null hypothesis (Fraser, 1991) Xie and Singh (2013) summarized making inference for hypothesis testing from a CD in the following theorem.
