@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Chenxu JIA's Blog（贾晨旭的博客）</title><link>https://DTRT4M.github.io/cjia.github.io</link><description>Statistic, Economic, and Finance</description><copyright>Chenxu JIA's Blog（贾晨旭的博客）</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://DTRT4M.github.io/cjia.github.io</link></image><lastBuildDate>Wed, 04 Dec 2024 12:59:16 +0000</lastBuildDate><managingEditor>Chenxu JIA's Blog（贾晨旭的博客）</managingEditor><ttl>60</ttl><webMaster>Chenxu JIA's Blog（贾晨旭的博客）</webMaster><item><title>PDE | Energy Method</title><link>https://DTRT4M.github.io/cjia.github.io/post/PDE%20-%20Energy%20Method.html</link><description># Preparation&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>Chenxu JIA's Blog（贾晨旭的博客）</title><link>https://DTRT4M.github.io/cjia.github.io</link><description>Statistic, Economic, and Finance</description><copyright>Chenxu JIA's Blog（贾晨旭的博客）</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.githubassets.com/favicons/favicon.svg</url><title>avatar</title><link>https://DTRT4M.github.io/cjia.github.io</link></image><lastBuildDate>Wed, 04 Dec 2024 13:02:08 +0000</lastBuildDate><managingEditor>Chenxu JIA's Blog（贾晨旭的博客）</managingEditor><ttl>60</ttl><webMaster>Chenxu JIA's Blog（贾晨旭的博客）</webMaster><item><title>PDE | Energy Method</title><link>https://DTRT4M.github.io/cjia.github.io/post/PDE%20-%20Energy%20Method.html</link><description># Preparation&#13;
 Consider a heat equation &#13;
 &#13;
 $$&#13;
 \begin{align}&#13;
 \begin{cases}&#13;
 &amp;u_t-Du_{xx}=0,\quad in\ [0, L] \times [0, \infty] \\&#13;
-&amp;u(0, x)=g(x),\quad for\ x\in [0, L]\\&#13;
+&amp;u(0, x)=g(x),\quad for\ x\in [0, L] \tag{1} \\&#13;
 &amp;u(0, t)=u(L, t),\quad for\ t&gt;0&#13;
 \end{cases}&#13;
 \end{align}&#13;

@@ -5,7 +5,7 @@ $$
 \begin{align}
 \begin{cases}
 &u_t-Du_{xx}=0,\quad in\ [0, L] \times [0, \infty] \\
-&u(0, x)=g(x),\quad for\ x\in [0, L]\\
+&u(0, x)=g(x),\quad for\ x\in [0, L] \tag{1} \\
 &u(0, t)=u(L, t),\quad for\ t>0
 \end{cases}
 \end{align}
